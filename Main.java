@@ -2,7 +2,26 @@
 
 public class Main {
    public static void main(String[] args){
-      map();
+      displayInstructions();
+   }
+
+
+   public static void welcome(){
+      System.out.print("\n\n\n\n\n\n");
+      System.out.println("-------------Zombie Run-------------");
+      System.out.println("          O      O         -O");
+      System.out.println("          |--    |--      -/V");
+      System.out.println("          |\\     |\\      -//");
+      System.out.print("\n\n");
+      System.out.println("How to play <h>");
+      System.out.println("Play Zombie Run <p>");
+   }
+
+
+   public static void displayInstructions(){
+      System.out.print("\n\n");
+      System.out.println("The goal is to survive 10 waves of zombies. You will find ammo(*) and\nhealth packs(+) around the map each level. Walk over them to pick\nthem up. Each turn you can move twice and attack three times.");
+      System.out.print("\n\n");
    }
 
 
