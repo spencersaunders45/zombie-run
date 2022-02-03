@@ -5,31 +5,55 @@ public class Main {
       Player user = new Player();
       int round = 1;
       String input = welcome();
-      map(round, user);
+
+      if(input.equals("h")){
+         input = displayInstructions();
+      }
+
+      if(input.equals("p")){
+         map(round, user);
+      }else{
+         System.out.println("Thanks for playing!");
+      }
    }
 
 
    public static String welcome(){
       System.out.print("\n\n\n\n\n\n");
-      System.out.println("-------------Zombie Run-------------");
+      System.out.println("-------------Zombie Run-------------\n");
       System.out.println("          O      O         -O");
       System.out.println("          |--    |--      -/V");
       System.out.println("          |\\     |\\      -//");
       System.out.print("\n\n");
       System.out.println("How to play <h>");
       System.out.println("Play Zombie Run <p>");
+      System.out.println("Exit Game <e>");
       Scanner input = new Scanner(System.in);
-      System.out.print("> ");
-      String strInput = input.nextLine();
+      String strInput;
+      do{
+         System.out.print("> ");
+         strInput = input.nextLine();
+      }while(!strInput.equals("h") && !strInput.equals("p") && !strInput.equals("e"));
       input.close();
       return strInput;
    }
 
 
-   public static void displayInstructions(){
+   public static String displayInstructions(){
       System.out.print("\n\n");
-      System.out.println("The goal is to survive 10 waves of zombies. You will find ammo(*) and\nhealth packs(+) around the map each level. Walk over them to pick\nthem up. Each turn you can move twice and attack three times.");
+      System.out.println("The goal is to survive 10 waves of zombies. You will find ammo(*) and\nhealth packs(+) around the map each level. Walk over them to pick\nthem up. Each turn you can move twice and attack three times.\n");
+      System.out.println("Play Zombie Rub <p>");
+      System.out.println("Exit Game <e>");
+      System.out.println();
+      Scanner helpInput = new Scanner(System.in);
+      String strInput;
+      do{
+         System.out.print("> ");
+         strInput = helpInput.nextLine();
+      }while(!strInput.equals("p") && !strInput.equals("e"));
+      helpInput.close();
       System.out.print("\n\n");
+      return strInput;
    }
 
 
