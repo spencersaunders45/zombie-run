@@ -1,12 +1,15 @@
-// import java.util.*;
+import java.util.*;
 
 public class Main {
    public static void main(String[] args){
-      displayInstructions();
+      Player user = new Player();
+      int round = 1;
+      String input = welcome();
+      map(round, user);
    }
 
 
-   public static void welcome(){
+   public static String welcome(){
       System.out.print("\n\n\n\n\n\n");
       System.out.println("-------------Zombie Run-------------");
       System.out.println("          O      O         -O");
@@ -15,6 +18,11 @@ public class Main {
       System.out.print("\n\n");
       System.out.println("How to play <h>");
       System.out.println("Play Zombie Run <p>");
+      Scanner input = new Scanner(System.in);
+      System.out.print("> ");
+      String strInput = input.nextLine();
+      input.close();
+      return strInput;
    }
 
 
@@ -25,7 +33,7 @@ public class Main {
    }
 
 
-   public static void map(){
+   public static void map(int round, Player user){
       int[][] map = {
          {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
          {3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3},
@@ -61,8 +69,8 @@ public class Main {
       // Display the map and player data
       System.out.print("\n\n\n\n\n\n\n");
       System.out.println("UP(w) DOWN(s) LEFT(a) RIGHT(d)");
-      System.out.println("Health: 100          Round: 1");
-      System.out.println("Weapon: Pistol");
+      System.out.println("Health: " + user.getHealth() + "          Round: " + round);
+      System.out.println("Weapon: " + user.getWeaponName());
       System.out.println();
       for(int i = 0; i < 30; i++){
          for(int j = 0; j < 30; j++){
