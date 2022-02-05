@@ -1,4 +1,5 @@
 import java.util.*;
+import weapons.*;
 
 public class Main {
    public static void main(String[] args){
@@ -114,8 +115,7 @@ public class Main {
 
 
 
-   public static Zombie[] enemies(int level){
-      Zombie[] zomArr = {};
+   public static Zombie[] enemies(int level, Zombie[] zomArr){
       if(level == 1){
          Zombie zombie1 = new Zombie();
          Zombie zombie2 = new Zombie();

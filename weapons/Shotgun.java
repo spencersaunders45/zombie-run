@@ -1,8 +1,10 @@
+package weapons;
+
 public class Shotgun {
    int damage = 10;
    int range = 2;
    int ammo = 5;
-   String name = "Shotgun";
+   String name = "weapons.Shotgun";
 
    // Setters and Getters
    public void setAmmo(){

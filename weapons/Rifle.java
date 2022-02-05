@@ -1,8 +1,10 @@
+package weapons;
+
 public class Rifle {
    int damage = 10;
    int range = 30;
    int ammo = 5;
-   String name = "Rifle";
+   String name = "weapons.Rifle";
 
    public void setAmmo(){
       this.ammo += 10;

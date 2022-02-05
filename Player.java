@@ -1,3 +1,7 @@
+import weapons.Pistols;
+import weapons.Rifle;
+import weapons.Shotgun;
+
 public class Player {
    int health = 100;
    int speed = 1;

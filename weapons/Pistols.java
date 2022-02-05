@@ -1,3 +1,5 @@
+package weapons;
+
 public class Pistols {
    int damage = 5;
    int range = 10;
