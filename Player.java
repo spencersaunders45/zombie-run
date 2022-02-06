@@ -4,8 +4,8 @@ import weapons.Shotgun;
 
 public class Player {
    int health = 100;
-   int speed = 1;
    char direction = 'N';
+   int[] position = {14,14};
    Pistols pistol = new Pistols();
    Shotgun shotgun = new Shotgun();
    Rifle rifle = new Rifle();
@@ -26,12 +26,21 @@ public class Player {
    }
 
 
+   private void updatePosition(){
+
+   }
+
+
    // Setters and Getters
    public void setHealth(){
       this.health += 50;
       if(this.health > 100){
          this.health = 100;
       }
+   }
+
+   public void setDirection(char direction){
+      this.direction = direction;
    }
 
    public String getWeaponName(){

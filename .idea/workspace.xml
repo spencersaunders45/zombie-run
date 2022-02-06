@@ -3,7 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="ee29334d-0296-43d8-93de-da0b402da12c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/Player.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/zombie-run/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/zombie-run/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/zombie-run/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/zombie-run/Main.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +74,8 @@
       <workItem from="1644008096498" duration="1093000" />
       <workItem from="1644037086785" duration="620000" />
       <workItem from="1644070564072" duration="339000" />
-      <workItem from="1644114803077" duration="2599000" />
+      <workItem from="1644114803077" duration="2797000" />
+      <workItem from="1644120077790" duration="2850000" />
     </task>
     <servers />
   </component>

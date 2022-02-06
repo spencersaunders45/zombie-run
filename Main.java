@@ -13,19 +13,18 @@ public class Main {
       if(mainInput.equals("h")){
          mainInput = displayInstructions(input);
       }
-      // Game loop and exit
+      // Game loop
       if(mainInput.equals("p")){
          gameActive = true;
          while(gameActive == true){
             map(round, user);
             mainInput = action(input);
-            if(mainInput == "q"){
+            if(mainInput.equals("q")){
                break;
             }
          }
-      }else{
-         System.out.println("Thanks for playing!");
       }
+      System.out.println("Thanks for playing!");
       input.close();
    }
 
@@ -121,7 +120,6 @@ public class Main {
    }
 
 
-
    public static Zombie[] enemies(int level, Zombie[] zomArr){
       if(level == 1){
          Zombie zombie1 = new Zombie();
@@ -162,13 +160,11 @@ public class Main {
    }
 
 
-
    public static void healEnemies(Zombie[] zomArr){
       for(Zombie i : zomArr){
          i.healZombie();
       }
    }
-
 
 
    public static String action(Scanner input){
@@ -182,4 +178,21 @@ public class Main {
       return strInput;
    }
 
+
+   public static void changeDirection(String mainInput, Player user){
+      if(mainInput.equals("w")){
+         user.setDirection('N');
+      }else if(mainInput.equals("a")){
+         user.setDirection(('W'));
+      }else if(mainInput.equals("s")){
+         user.setDirection('S');
+      }else{
+         user.setDirection('E');
+      }
+   }
+
+
+   public static void move(){
+
+   }
 }
