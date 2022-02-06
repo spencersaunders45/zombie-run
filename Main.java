@@ -3,23 +3,34 @@ import weapons.*;
 
 public class Main {
    public static void main(String[] args){
+      // Create Variables
+      Scanner input = new Scanner(System.in);
       Player user = new Player();
       int round = 1;
-      String input = welcome();
-
-      if(input.equals("h")){
-         input = displayInstructions();
+      boolean gameActive = false;
+      // Home screen
+      String mainInput = welcome(input);
+      if(mainInput.equals("h")){
+         mainInput = displayInstructions(input);
       }
-
-      if(input.equals("p")){
-         map(round, user);
+      // Game loop and exit
+      if(mainInput.equals("p")){
+         gameActive = true;
+         while(gameActive == true){
+            map(round, user);
+            mainInput = action(input);
+            if(mainInput == "q"){
+               break;
+            }
+         }
       }else{
          System.out.println("Thanks for playing!");
       }
+      input.close();
    }
 
 
-   public static String welcome(){
+   public static String welcome(Scanner input){
       System.out.print("\n\n\n\n\n\n");
       System.out.println("-------------Zombie Run-------------\n");
       System.out.println("          O      O         -O");
@@ -29,30 +40,26 @@ public class Main {
       System.out.println("How to play <h>");
       System.out.println("Play Zombie Run <p>");
       System.out.println("Exit Game <e>");
-      Scanner input = new Scanner(System.in);
       String strInput;
       do{
          System.out.print("> ");
          strInput = input.nextLine();
       }while(!strInput.equals("h") && !strInput.equals("p") && !strInput.equals("e"));
-      input.close();
       return strInput;
    }
 
 
-   public static String displayInstructions(){
+   public static String displayInstructions(Scanner input){
       System.out.print("\n\n");
       System.out.println("The goal is to survive 10 waves of zombies. You will find ammo(*) and\nhealth packs(+) around the map each level. Walk over them to pick\nthem up. Each turn you can move twice and attack three times.\n");
       System.out.println("Play Zombie Rub <p>");
       System.out.println("Exit Game <e>");
       System.out.println();
-      Scanner helpInput = new Scanner(System.in);
       String strInput;
       do{
          System.out.print("> ");
-         strInput = helpInput.nextLine();
+         strInput = input.nextLine();
       }while(!strInput.equals("p") && !strInput.equals("e"));
-      helpInput.close();
       System.out.print("\n\n");
       return strInput;
    }
@@ -160,6 +167,19 @@ public class Main {
       for(Zombie i : zomArr){
          i.healZombie();
       }
+   }
+
+
+
+   public static String action(Scanner input){
+      System.out.println();
+      String strInput;
+      do{
+         System.out.print("> ");
+         strInput = input.nextLine();
+      }while(!strInput.equals("w") && !strInput.equals("a") && !strInput.equals("s") && !strInput.equals("d")
+              && !strInput.equals("q") && !strInput.equals("c") && !strInput.equals("f"));
+      return strInput;
    }
 
 }
