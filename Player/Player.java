@@ -55,4 +55,16 @@ public class Player {
    public int[] getPosition(){
       return position;
    }
+
+   public Pistols getPistol(){
+      return pistol;
+   }
+
+   public Rifle getRifle(){
+      return rifle;
+   }
+
+   public Shotgun getShotgun(){
+      return shotgun;
+   }
 }

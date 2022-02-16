@@ -6,12 +6,25 @@ public class Pistols {
    int ammo = 30;
    String name = "Pistol";
 
-   // Setters and Getters
+   // Setters
    public void setAmmo(){
       this.ammo += 15;
    }
 
+   // Getters
    public String getName(){
       return this.name;
+   }
+
+   public int getAmmo(){
+      return ammo;
+   }
+
+   public int getDamage(){
+      return damage;
+   }
+
+   public int getRange(){
+      return range;
    }
 }

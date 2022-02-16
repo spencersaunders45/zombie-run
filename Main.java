@@ -24,11 +24,11 @@ public class Main {
          // Pick the map
          Maps game = null;
          mainInput = mapSelection(input);
-         if (mainInput == "field"){
+         if (mainInput.equals("field")){
             game = field();
-         } else if(mainInput == "city"){
+         } else if(mainInput.equals("city")){
             // City selectedMap = new City();
-         } else if(mainInput == "highway"){
+         } else if(mainInput.equals("highway")){
             // Highway selectedMap = new Highway();
          } else {
             System.out.println("Error: No map selected");
@@ -49,22 +49,29 @@ public class Main {
       input.close();
    }
 
-
    public static void displayHud(Maps game){
+      Player player = game.getPlayer1();
       System.out.print("\n\n\n\n");
-      System.out.println("Display Hud");
+      System.out.println("Health: " + player.getHealth());
+      if (player.getWeaponName().equals("Pistol")){
+         System.out.println("Gun: " + player.getWeaponName() +"     Ammo:" + player.getPistol().getAmmo());
+      } else if (player.getWeaponName().equals("Rifle")){
+         System.out.println("Gun: " + player.getWeaponName() +"     Ammo:" + player.getRifle().getAmmo());
+      } else if (player.getWeaponName().equals("Shotgun")){
+         System.out.println("Gun: " + player.getWeaponName() +"     Ammo:" + player.getShotgun().getAmmo());
+      }
       System.out.print("\n\n");
    }
 
    public static String welcome(Scanner input){
       System.out.print("\n\n\n\n\n\n");
-      System.out.println("-------------Zombie.Zombie Run-------------\n");
+      System.out.println("-------------Zombie Run-------------\n");
       System.out.println("          O      O         -O");
       System.out.println("          |--    |--      -/V");
       System.out.println("          |\\     |\\      -//");
       System.out.print("\n\n");
       System.out.println("How to play <h>");
-      System.out.println("Play Zombie.Zombie Run <p>");
+      System.out.println("Play Zombie Run <p>");
       System.out.println("Exit Game <e>");
       String strInput;
       do{
@@ -104,6 +111,7 @@ public class Main {
 
    public static String action(Scanner input){
       System.out.println();
+      System.out.println("up<w> down<s> left<a> right<d> shoot<f>");
       String strInput;
       do{
          System.out.print("> ");
@@ -113,16 +121,20 @@ public class Main {
       return strInput;
    }
 
-   public static void changeDirection(String mainInput, Player user){
+   public static void changeDirection(String mainInput, Player player){
       if(mainInput.equals("w")){
-         user.setDirection('N');
+         player.setDirection('N');
       }else if(mainInput.equals("a")){
-         user.setDirection(('W'));
+         player.setDirection(('W'));
       }else if(mainInput.equals("s")){
-         user.setDirection('S');
+         player.setDirection('S');
       }else{
-         user.setDirection('E');
+         player.setDirection('E');
       }
+   }
+
+   public static void changePlayerLocation(Player player){
+
    }
 
    public static Maps field(){

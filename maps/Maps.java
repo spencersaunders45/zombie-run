@@ -6,6 +6,7 @@ import Zombie.Zombie;
 public class Maps {
     // Attributes
     int[][] map;
+    int level;
     private Player player1 = new Player();
     private Zombie zombie1 = new Zombie();
     private Zombie zombie2 = new Zombie();
@@ -27,6 +28,8 @@ public class Maps {
         this.map = map;
         this.zombieStartLocations = zombieStartLocations;
         this.playerStartLocation = playerStartLocation;
+        this.level = 1;
+        addEntities();
     }
 
     // Methods
@@ -47,7 +50,7 @@ public class Maps {
 
     public void displayMap(){
         for (int i = 0; i < 30; i++){
-            for (int j = 0; i < 30; j++){
+            for (int j = 0; j < 30; j++){
                 if (map[i][j] == 0){
                     System.out.print('-');
                 } else if (map[i][j] == 1){
@@ -56,9 +59,19 @@ public class Maps {
                     System.out.print('^');
                 } else if (map[i][j] == 3){
                     System.out.print('|');
+                } else if(map[i][j] == 10){
+                    System.out.print('o');
                 }
             }
             System.out.println();
+        }
+    }
+
+    private void addEntities(){
+        int spawnCount = 2 + this.level;
+        for (int i = 0; i < spawnCount; i++){
+            zombieArray[i].setLocation(zombieStartLocations[i]);
+            map[zombieStartLocations[i][0]][zombieStartLocations[i][1]] = 10;
         }
     }
 
