@@ -2,7 +2,7 @@ import java.util.*;
 
 import Player.Player;
 import Zombie.Zombie;
-import maps.Field;
+import maps.Maps;
 
 public class Main {
    public static void main(String[] args){
@@ -18,14 +18,14 @@ public class Main {
          mainInput = displayInstructions(input);
       }
 
-      // Game loop
       if(mainInput.equals("p")){
          gameActive = true;
 
          // Pick the map
+         Maps game = null;
          mainInput = mapSelection(input);
          if (mainInput == "field"){
-            Field selectedMap = new Field();
+            game = field();
          } else if(mainInput == "city"){
             // City selectedMap = new City();
          } else if(mainInput == "highway"){
@@ -34,9 +34,11 @@ public class Main {
             System.out.println("Error: No map selected");
             return;
          }
+
+         // Game loop
          while(gameActive == true){
-            displayHud();
-            displayMap(selectedMap);
+            displayHud(game);
+            game.displayMap();
             mainInput = action(input);
             if(mainInput.equals("q")){
                break;
@@ -48,7 +50,11 @@ public class Main {
    }
 
 
-
+   public static void displayHud(Maps game){
+      System.out.print("\n\n\n\n");
+      System.out.println("Display Hud");
+      System.out.print("\n\n");
+   }
 
    public static String welcome(Scanner input){
       System.out.print("\n\n\n\n\n\n");
@@ -96,45 +102,6 @@ public class Main {
       return strInput;
    }
 
-   public static Zombie[] enemies(int level, Zombie[] zomArr){
-      if(level == 1){
-         Zombie zombie1 = new Zombie();
-         Zombie zombie2 = new Zombie();
-         Zombie zombie3 = new Zombie();
-         zomArr[0] = zombie1;
-         zomArr[1] = zombie2;
-         zomArr[2] = zombie3;
-      } else if(level == 2){
-         Zombie zombie4 = new Zombie();
-         zomArr[3] = zombie4;
-      } else if(level == 3){
-         Zombie zombie5 = new Zombie();
-         zomArr[4] = zombie5;
-      } else if(level == 4){
-         Zombie zombie6 = new Zombie();
-         zomArr[5] = zombie6;
-      } else if(level == 5){
-         Zombie zombie7 = new Zombie();
-         zomArr[6] = zombie7;
-      } else if(level == 6){
-         Zombie zombie8 = new Zombie();
-         zomArr[7] = zombie8;
-      } else if(level == 7){
-         Zombie zombie9 = new Zombie();
-         zomArr[8] = zombie9;
-      } else if(level == 8){
-         Zombie zombie10 = new Zombie();
-         zomArr[9] = zombie10;
-      } else if(level == 9){
-         Zombie zombie11 = new Zombie();
-         zomArr[10] = zombie11;
-      } else if(level == 10){
-         Zombie zombie12 = new Zombie();
-         zomArr[11] = zombie12;
-      }
-      return zomArr;
-   }
-
    public static String action(Scanner input){
       System.out.println();
       String strInput;
@@ -156,5 +123,46 @@ public class Main {
       }else{
          user.setDirection('E');
       }
+   }
+
+   public static Maps field(){
+      int[][] map = {
+              {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+              {3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3},
+              {3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3},
+              {3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3},
+              {3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3},
+              {3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3},
+              {3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3},
+              {3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3},
+              {3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3},
+              {3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3},
+              {3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3},
+              {3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3},
+              {3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3},
+              {3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3},
+              {3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3},
+              {3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3},
+              {3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3},
+              {3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3},
+              {3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3},
+              {3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3},
+              {3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3},
+              {3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3},
+              {3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3},
+              {3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3},
+              {3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3},
+              {3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3},
+              {3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3},
+              {3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3},
+              {3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3},
+              {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}
+      };
+      int[][] zombieStartLocations = {{5,5}, {7,24}, {21,10}, {21,28}, {15,1}, {1,15}, {7,27}, {5,6}, {9,3}, {28,1},
+              {24,24}, {1,25}, {14,14}};
+      int[] playerStartLocation = {14,14};
+
+      Maps field = new Maps(map, zombieStartLocations, playerStartLocation);
+      return field;
    }
 }

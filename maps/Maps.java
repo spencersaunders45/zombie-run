@@ -45,6 +45,23 @@ public class Maps {
         }
     }
 
+    public void displayMap(){
+        for (int i = 0; i < 30; i++){
+            for (int j = 0; i < 30; j++){
+                if (map[i][j] == 0){
+                    System.out.print('-');
+                } else if (map[i][j] == 1){
+                    System.out.print(' ');
+                } else if (map[i][j] == 2){
+                    System.out.print('^');
+                } else if (map[i][j] == 3){
+                    System.out.print('|');
+                }
+            }
+            System.out.println();
+        }
+    }
+
     // Setters
     public void setMap(int[][] map) {
         this.map = map;
