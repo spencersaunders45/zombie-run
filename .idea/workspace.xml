@@ -3,12 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="ee29334d-0296-43d8-93de-da0b402da12c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/Player.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/zombie-run/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/zombie-run/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/zombie-run/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/zombie-run/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/Player/Player.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/Player/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Zombie.class" beforeDir="false" afterPath="$PROJECT_DIR$/Zombie/Zombie.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Zombie.java" beforeDir="false" afterPath="$PROJECT_DIR$/Zombie/Zombie.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,11 +42,20 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../javaPractice" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="advanced.settings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Spencer Saunders\OneDrive\coding-files\Java\zombie-run\Player" />
+      <recent name="C:\Users\Spencer Saunders\OneDrive\coding-files\Java\zombie-run\Zombie" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="Zombie" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -75,7 +83,9 @@
       <workItem from="1644037086785" duration="620000" />
       <workItem from="1644070564072" duration="339000" />
       <workItem from="1644114803077" duration="2797000" />
-      <workItem from="1644120077790" duration="2850000" />
+      <workItem from="1644120077790" duration="2919000" />
+      <workItem from="1644194523901" duration="12000" />
+      <workItem from="1644943958560" duration="11834000" />
     </task>
     <servers />
   </component>

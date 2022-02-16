@@ -1,5 +1,8 @@
 import java.util.*;
-import weapons.*;
+
+import Player.Player;
+import Zombie.Zombie;
+import maps.Field;
 
 public class Main {
    public static void main(String[] args){
@@ -8,16 +11,32 @@ public class Main {
       Player user = new Player();
       int round = 1;
       boolean gameActive = false;
+
       // Home screen
       String mainInput = welcome(input);
       if(mainInput.equals("h")){
          mainInput = displayInstructions(input);
       }
+
       // Game loop
       if(mainInput.equals("p")){
          gameActive = true;
+
+         // Pick the map
+         mainInput = mapSelection(input);
+         if (mainInput == "field"){
+            Field selectedMap = new Field();
+         } else if(mainInput == "city"){
+            // City selectedMap = new City();
+         } else if(mainInput == "highway"){
+            // Highway selectedMap = new Highway();
+         } else {
+            System.out.println("Error: No map selected");
+            return;
+         }
          while(gameActive == true){
-            map(round, user);
+            displayHud();
+            displayMap(selectedMap);
             mainInput = action(input);
             if(mainInput.equals("q")){
                break;
@@ -29,15 +48,17 @@ public class Main {
    }
 
 
+
+
    public static String welcome(Scanner input){
       System.out.print("\n\n\n\n\n\n");
-      System.out.println("-------------Zombie Run-------------\n");
+      System.out.println("-------------Zombie.Zombie Run-------------\n");
       System.out.println("          O      O         -O");
       System.out.println("          |--    |--      -/V");
       System.out.println("          |\\     |\\      -//");
       System.out.print("\n\n");
       System.out.println("How to play <h>");
-      System.out.println("Play Zombie Run <p>");
+      System.out.println("Play Zombie.Zombie Run <p>");
       System.out.println("Exit Game <e>");
       String strInput;
       do{
@@ -47,78 +68,33 @@ public class Main {
       return strInput;
    }
 
-
    public static String displayInstructions(Scanner input){
       System.out.print("\n\n");
       System.out.println("The goal is to survive 10 waves of zombies. You will find ammo(*) and\nhealth packs(+) around the map each level. Walk over them to pick\nthem up. Each turn you can move twice and attack three times.\n");
-      System.out.println("Play Zombie Rub <p>");
+      System.out.println("Play Zombie.Zombie Rub <p>");
       System.out.println("Exit Game <e>");
       System.out.println();
       String strInput;
       do{
          System.out.print("> ");
-         strInput = input.nextLine();
+         strInput = input.nextLine().toLowerCase();
       }while(!strInput.equals("p") && !strInput.equals("e"));
       System.out.print("\n\n");
       return strInput;
    }
 
-
-   public static void map(int round, Player user){
-      int[][] map = {
-         {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-         {3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3},
-         {3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3},
-         {3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3},
-         {3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3},
-         {3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3},
-         {3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3},
-         {3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3},
-         {3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3},
-         {3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3},
-         {3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3},
-         {3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3},
-         {3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3},
-         {3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3},
-         {3,1,1,1,1,1,1,1,1,1,1,1,1,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3},
-         {3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3},
-         {3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3},
-         {3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3},
-         {3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3},
-         {3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3},
-         {3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3},
-         {3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3},
-         {3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3},
-         {3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3},
-         {3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3},
-         {3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3},
-         {3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3},
-         {3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3},
-         {3,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3},
-         {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}
-      };
-      // Display the map and player data
-      System.out.print("\n\n\n\n\n\n\n");
-      System.out.println("UP(w) DOWN(s) LEFT(a) RIGHT(d)");
-      System.out.println("Health: " + user.getHealth() + "          Round: " + round);
-      System.out.println("Weapon: " + user.getWeaponName());
-      System.out.println();
-      for(int i = 0; i < 30; i++){
-         for(int j = 0; j < 30; j++){
-            if(map[i][j] == 0){
-               System.out.print('-');
-            } else if(map[i][j] == 1){
-               System.out.print(' ');
-            } else if(map[i][j] == 2){
-               System.out.print('^');
-            } else if(map[i][j] == 3){
-               System.out.print('|');
-            }
-         }
-         System.out.print('\n');
-      }
+   public static String mapSelection(Scanner input){
+      System.out.print("\n\n");
+      System.out.println("Type the map to play on.");
+      System.out.println("FIELD, CITY, HIGHWAY");
+      String strInput;
+      do{
+         System.out.print("> ");
+         strInput = input.nextLine().toLowerCase();
+      } while(!strInput.equals("field") && !strInput.equals("city") && !strInput.equals("highway"));
+      System.out.print("\n\n");
+      return strInput;
    }
-
 
    public static Zombie[] enemies(int level, Zombie[] zomArr){
       if(level == 1){
@@ -159,14 +135,6 @@ public class Main {
       return zomArr;
    }
 
-
-   public static void healEnemies(Zombie[] zomArr){
-      for(Zombie i : zomArr){
-         i.healZombie();
-      }
-   }
-
-
    public static String action(Scanner input){
       System.out.println();
       String strInput;
@@ -178,7 +146,6 @@ public class Main {
       return strInput;
    }
 
-
    public static void changeDirection(String mainInput, Player user){
       if(mainInput.equals("w")){
          user.setDirection('N');
@@ -189,10 +156,5 @@ public class Main {
       }else{
          user.setDirection('E');
       }
-   }
-
-
-   public static void move(){
-
    }
 }

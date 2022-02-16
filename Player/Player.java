@@ -1,3 +1,5 @@
+package Player;
+
 import weapons.Pistols;
 import weapons.Rifle;
 import weapons.Shotgun;
@@ -25,13 +27,7 @@ public class Player {
       }
    }
 
-
-   private void updatePosition(){
-
-   }
-
-
-   // Setters and Getters
+   // Setters
    public void setHealth(){
       this.health += 50;
       if(this.health > 100){
@@ -43,11 +39,20 @@ public class Player {
       this.direction = direction;
    }
 
+   public void setPosition(int[] position){
+      this.position = position;
+   }
+
+   // Getters
    public String getWeaponName(){
-      return this.weaponName;
+      return weaponName;
    }
 
    public int getHealth(){
-      return this.health;
+      return health;
+   }
+
+   public int[] getPosition(){
+      return position;
    }
 }
