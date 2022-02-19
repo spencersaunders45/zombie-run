@@ -90,15 +90,56 @@ public class Maps {
 
     public boolean movePlayer(String movement){
         boolean isValid = false;
-        if (movement.equals("w")){
-            int[] position = player1.getPosition();
-            if (position[1] > 0){
-                position[1]--;
-                if(map[position[0]][position[1]] == 1){
-                    player1.setPosition(position);
-                    return true;
+        int[] position = player1.getPosition();
+        switch (movement) {
+            case "w":
+                if (position[0] > 0) {
+                    position[0]--;
+                    if (map[position[0]][position[1]] == 1) {
+                        map[position[0] + 1][position[1]] = 1;
+                        player1.setPosition(position);
+                        player1.setDirection('N');
+                        map[position[0]][position[1]] = 11;
+                        return true;
+                    }
                 }
-            }
+                break;
+            case "s":
+                if (position[0] < map.length - 1) {
+                    position[0]++;
+                    if (map[position[0]][position[1]] == 1) {
+                        map[position[0] - 1][position[1]] = 1;
+                        player1.setPosition(position);
+                        player1.setDirection('S');
+                        map[position[0]][position[1]] = 11;
+                        return true;
+                    }
+                }
+                break;
+            case "a":
+                if (position[1] > 0) {
+                    position[1]--;
+                    if (map[position[0]][position[1]] == 1) {
+                        map[position[0]][position[1] + 1] = 1;
+                        player1.setPosition(position);
+                        player1.setDirection('W');
+                        map[position[0]][position[1]] = 11;
+                        return true;
+                    }
+                }
+                break;
+            case "d":
+                if (position[1] < map[0].length - 1) {
+                    position[1]++;
+                    if (map[position[0]][position[1]] == 1) {
+                        map[position[0]][position[1] - 1] = 1;
+                        player1.setPosition(position);
+                        player1.setDirection('E');
+                        map[position[0]][position[1]] = 11;
+                        return true;
+                    }
+                }
+                break;
         }
         return isValid;
     }

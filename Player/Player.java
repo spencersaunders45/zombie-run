@@ -6,8 +6,8 @@ import weapons.Shotgun;
 
 public class Player {
    int health = 100;
-   char direction = 'S';
-   int[] position = {};
+   char direction = 'N';
+   int[] position = {14,14}; //make this empty
    Pistols pistol = new Pistols();
    Shotgun shotgun = new Shotgun();
    Rifle rifle = new Rifle();
