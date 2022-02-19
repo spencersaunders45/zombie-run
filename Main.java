@@ -42,6 +42,14 @@ public class Main {
             mainInput = action(input);
             if(mainInput.equals("q")){
                break;
+            } else if (mainInput.equals("w") || mainInput.equals("s") || mainInput.equals("a") || mainInput.equals("d")){
+               //Add loop until movement is valid
+               boolean validMovement = game.movePlayer(mainInput);
+            } else if (mainInput.equals("f")){
+               //code here
+            } else {
+               System.out.println("Error: Unknown input");
+               return;
             }
          }
       }
@@ -111,6 +119,7 @@ public class Main {
 
    public static String action(Scanner input){
       System.out.println();
+      System.out.println("quit game<q>");
       System.out.println("up<w> down<s> left<a> right<d> shoot<f>");
       String strInput;
       do{

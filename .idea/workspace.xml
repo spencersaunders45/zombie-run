@@ -7,22 +7,8 @@
       <change beforePath="$PROJECT_DIR$/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Player/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/Player/Player.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Player/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/Player/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zombie/Zombie.class" beforeDir="false" afterPath="$PROJECT_DIR$/Zombie/Zombie.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maps/Field.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maps/Maps.class" beforeDir="false" afterPath="$PROJECT_DIR$/maps/Maps.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/maps/Maps.java" beforeDir="false" afterPath="$PROJECT_DIR$/maps/Maps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/zombie-run/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/zombie-run/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/zombie-run/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/zombie-run/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/zombie-run/Player.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/zombie-run/Zombie.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/zombie-run/weapons/Pistols.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/zombie-run/weapons/Pistols.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/zombie-run/weapons/Rifle.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/zombie-run/weapons/Rifle.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/zombie-run/weapons/Shotgun.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/zombie-run/weapons/Shotgun.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weapons/Pistols.class" beforeDir="false" afterPath="$PROJECT_DIR$/weapons/Pistols.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weapons/Pistols.java" beforeDir="false" afterPath="$PROJECT_DIR$/weapons/Pistols.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weapons/Rifle.class" beforeDir="false" afterPath="$PROJECT_DIR$/weapons/Rifle.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weapons/Rifle.java" beforeDir="false" afterPath="$PROJECT_DIR$/weapons/Rifle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weapons/Shotgun.class" beforeDir="false" afterPath="$PROJECT_DIR$/weapons/Shotgun.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/weapons/Shotgun.java" beforeDir="false" afterPath="$PROJECT_DIR$/weapons/Shotgun.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,7 +88,8 @@
       <workItem from="1644120077790" duration="2919000" />
       <workItem from="1644194523901" duration="12000" />
       <workItem from="1644943958560" duration="16296000" />
-      <workItem from="1644983487608" duration="8188000" />
+      <workItem from="1644983487608" duration="8826000" />
+      <workItem from="1645237527075" duration="4767000" />
     </task>
     <servers />
   </component>

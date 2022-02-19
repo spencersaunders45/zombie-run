@@ -20,7 +20,8 @@ public class Maps {
     private Zombie zombie10 = new Zombie();
     private Zombie zombie11 = new Zombie();
     private Zombie zombie12 = new Zombie();
-    final Zombie[] zombieArray = {zombie1, zombie2, zombie3, zombie4, zombie5, zombie6, zombie7, zombie8, zombie9, zombie10, zombie11, zombie12};
+    final Zombie[] zombieArray = {zombie1, zombie2, zombie3, zombie4, zombie5, zombie6, zombie7, zombie8, zombie9,
+            zombie10, zombie11, zombie12};
     final int[][] zombieStartLocations;
     final int[] playerStartLocation;
 
@@ -30,6 +31,7 @@ public class Maps {
         this.playerStartLocation = playerStartLocation;
         this.level = 1;
         addEntities();
+        //Add method that add positions upon creation
     }
 
     // Methods
@@ -61,6 +63,16 @@ public class Maps {
                     System.out.print('|');
                 } else if(map[i][j] == 10){
                     System.out.print('o');
+                } else if(map[i][j] == 11){ // Displays player
+                    if (this.player1.getDirection() == 'N'){
+                        System.out.print('^');
+                    } else if(this.player1.getDirection() == 'E'){
+                        System.out.print('>');
+                    } else if(this.player1.getDirection() == 'W'){
+                        System.out.print('<');
+                    } else {
+                        System.out.print('V');
+                    }
                 }
             }
             System.out.println();
@@ -73,6 +85,22 @@ public class Maps {
             zombieArray[i].setLocation(zombieStartLocations[i]);
             map[zombieStartLocations[i][0]][zombieStartLocations[i][1]] = 10;
         }
+        map[playerStartLocation[0]][playerStartLocation[1]] = 11;
+    }
+
+    public boolean movePlayer(String movement){
+        boolean isValid = false;
+        if (movement.equals("w")){
+            int[] position = player1.getPosition();
+            if (position[1] > 0){
+                position[1]--;
+                if(map[position[0]][position[1]] == 1){
+                    player1.setPosition(position);
+                    return true;
+                }
+            }
+        }
+        return isValid;
     }
 
     // Setters

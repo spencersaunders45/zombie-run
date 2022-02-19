@@ -6,8 +6,8 @@ import weapons.Shotgun;
 
 public class Player {
    int health = 100;
-   char direction = 'N';
-   int[] position = {14,14};
+   char direction = 'S';
+   int[] position = {};
    Pistols pistol = new Pistols();
    Shotgun shotgun = new Shotgun();
    Rifle rifle = new Rifle();
@@ -66,5 +66,9 @@ public class Player {
 
    public Shotgun getShotgun(){
       return shotgun;
+   }
+
+   public char getDirection() {
+      return direction;
    }
 }
