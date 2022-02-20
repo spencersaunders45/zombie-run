@@ -43,8 +43,14 @@ public class Main {
             if(mainInput.equals("q")){
                break;
             } else if (mainInput.equals("w") || mainInput.equals("s") || mainInput.equals("a") || mainInput.equals("d")){
-               //Add loop until movement is valid
-               boolean validMovement = game.movePlayer(mainInput);
+               boolean isValid = true;
+               do{
+                  if (isValid == false){
+                     System.out.println("Cannot move there: try again");
+                     mainInput = action(input);
+                  }
+                  isValid = game.movePlayer(mainInput);
+               }while (isValid == false);
             } else if (mainInput.equals("f")){
                //code here
             } else {
@@ -125,6 +131,10 @@ public class Main {
       do{
          System.out.print("> ");
          strInput = input.nextLine();
+         if(!strInput.equals("w") && !strInput.equals("a") && !strInput.equals("s") && !strInput.equals("d")
+                 && !strInput.equals("q") && !strInput.equals("c") && !strInput.equals("f")){
+            System.out.println("Input not valid: try again");
+         }
       }while(!strInput.equals("w") && !strInput.equals("a") && !strInput.equals("s") && !strInput.equals("d")
               && !strInput.equals("q") && !strInput.equals("c") && !strInput.equals("f"));
       return strInput;
