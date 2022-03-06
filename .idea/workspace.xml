@@ -5,6 +5,9 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Player/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/Player/Player.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Player/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/Player/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Zombie/Zombie.java" beforeDir="false" afterPath="$PROJECT_DIR$/Zombie/Zombie.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/maps/Maps.class" beforeDir="false" afterPath="$PROJECT_DIR$/maps/Maps.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/maps/Maps.java" beforeDir="false" afterPath="$PROJECT_DIR$/maps/Maps.java" afterDir="false" />
     </list>
@@ -46,7 +49,7 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="advanced.settings" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Java" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -90,7 +93,8 @@
       <workItem from="1645237527075" duration="4767000" />
       <workItem from="1645289201278" duration="3655000" />
       <workItem from="1645321719412" duration="592000" />
-      <workItem from="1645325106277" duration="1700000" />
+      <workItem from="1645325106277" duration="3339000" />
+      <workItem from="1646539287212" duration="4681000" />
     </task>
     <servers />
   </component>

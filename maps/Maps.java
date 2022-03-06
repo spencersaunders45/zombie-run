@@ -31,10 +31,17 @@ public class Maps {
         this.playerStartLocation = playerStartLocation;
         this.level = 1;
         addEntities();
-        //Add method that add positions upon creation
+        addLocations();
     }
 
     // Methods
+    private void addLocations(){
+        player1.setPosition(playerStartLocation);
+        for (int i = 0; i < level + 2; i++){
+            zombieArray[i].setLocation(zombieStartLocations[i]);
+        }
+    }
+
     public void healZombies(){
         for (Zombie i : zombieArray){
             i.setHealth();

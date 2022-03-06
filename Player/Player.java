@@ -7,13 +7,14 @@ import weapons.Shotgun;
 public class Player {
    int health = 100;
    char direction = 'N';
-   int[] position = {14,14}; //make this empty
+   int[] position;
    Pistols pistol = new Pistols();
    Shotgun shotgun = new Shotgun();
    Rifle rifle = new Rifle();
    Object weapon = pistol;
    String weaponName = "Pistol";
 
+   //Methods
    public void changeWeapon(int weaponNum){
       if(weaponNum == 1){
          this.weapon = pistol;

@@ -7,6 +7,16 @@ public class Zombie {
    int[] location;
    boolean killed = false;
 
+   // Methods
+   public void shotZombie(){
+      health -= 10;
+      if (health <= 0){
+         killed = true;
+         int[] killedLocation = {0,0};
+         setLocation(killedLocation);
+      }
+   }
+
    // Getters
    public int[] getLocation(){
       return location;

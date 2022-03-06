@@ -27,9 +27,9 @@ public class Main {
          if (mainInput.equals("field")){
             game = field();
          } else if(mainInput.equals("city")){
-            // City selectedMap = new City();
+            // game = city();
          } else if(mainInput.equals("highway")){
-            // Highway selectedMap = new Highway();
+            // game = highway();
          } else {
             System.out.println("Error: No map selected");
             return;
@@ -40,9 +40,10 @@ public class Main {
             displayHud(game);
             game.displayMap();
             mainInput = action(input);
-            if(mainInput.equals("q")){
+            if(mainInput.equals("q")){ // Ends the game
                break;
-            } else if (mainInput.equals("w") || mainInput.equals("s") || mainInput.equals("a") || mainInput.equals("d")){
+            } else if (mainInput.equals("w") || mainInput.equals("s") || // Moves the player
+                    mainInput.equals("a") || mainInput.equals("d")){
                boolean isValid = true;
                do{
                   if (isValid == false){
@@ -51,7 +52,7 @@ public class Main {
                   }
                   isValid = game.movePlayer(mainInput);
                }while (isValid == false);
-            } else if (mainInput.equals("f")){
+            } else if (mainInput.equals("f")){ // Shoots zombies
                //code here
             } else {
                System.out.println("Error: Unknown input");
@@ -190,7 +191,7 @@ public class Main {
               {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}
       };
       int[][] zombieStartLocations = {{5,5}, {7,24}, {21,10}, {21,28}, {15,1}, {1,15}, {7,27}, {5,6}, {9,3}, {28,1},
-              {24,24}, {1,25}, {14,14}};
+              {24,24}, {1,25}};
       int[] playerStartLocation = {14,14};
 
       Maps field = new Maps(map, zombieStartLocations, playerStartLocation);
