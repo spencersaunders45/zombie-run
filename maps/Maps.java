@@ -3,6 +3,8 @@ package maps;
 import Player.Player;
 import Zombie.Zombie;
 
+import java.util.HashMap;
+
 public class Maps {
     // Attributes
     int[][] map;
@@ -148,6 +150,31 @@ public class Maps {
                 break;
         }
         return false;
+    }
+
+    public void shootZombie(){
+        int[] bulletLocation = player1.getPosition();
+        Zombie closestZombie = null;
+        if(player1.getDirection() == 'N'){
+            for(int i = 0; i < level + 2; i++){
+                int[] zombieLocation = zombieArray[i].getLocation();
+                if(zombieLocation[1] == bulletLocation[1]){
+                    if(closestZombie == null){
+                        closestZombie = zombieArray[i];
+                    } else if(zombieLocation[0] < closestZombie.getLocation()[0]) {
+                        closestZombie = zombieArray[i];
+                    }
+                }
+            }
+            if (closestZombie != null){
+                closestZombie.shotZombie();
+                System.out.println("Hit!");
+            }
+        }
+    }
+
+    private void withShotgun(){
+
     }
 
     // Setters

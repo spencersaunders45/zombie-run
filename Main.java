@@ -53,7 +53,7 @@ public class Main {
                   isValid = game.movePlayer(mainInput);
                }while (isValid == false);
             } else if (mainInput.equals("f")){ // Shoots zombies
-               //code here
+               game.shootZombie();
             } else {
                System.out.println("Error: Unknown input");
                return;
