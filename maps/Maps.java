@@ -152,28 +152,47 @@ public class Maps {
         return false;
     }
 
+    private void applyZombieDamage(Zombie closestZombie){
+        if (closestZombie != null){
+            int[] isDead = closestZombie.shotZombie();
+            int[] notDead = {0,0};
+            if (isDead != notDead){
+                map[isDead[0]][isDead[1]] = 1;
+            }
+        }
+    }
+
     public void shootZombie(){
         int[] bulletLocation = player1.getPosition();
         Zombie closestZombie = null;
+        // Kills Zombies north
         if(player1.getDirection() == 'N'){
+            // Loops through all zombies in the current level
             for(int i = 0; i < level + 2; i++){
                 int[] zombieLocation = zombieArray[i].getLocation();
+                // Checks to see if the Zombie is in the same row as the player
                 if(zombieLocation[1] == bulletLocation[1]){
                     if(closestZombie == null){
                         closestZombie = zombieArray[i];
+                    // Checks to see if the zombie in the same row is north of the player
                     } else if(zombieLocation[0] < closestZombie.getLocation()[0]) {
                         closestZombie = zombieArray[i];
                     }
                 }
             }
-            if (closestZombie != null){
-                int[] isDead = closestZombie.shotZombie();
-                int[] notDead = {0,0};
-                if (isDead != notDead){
-                    System.out.println(isDead[0]);
-                    map[isDead[0]][isDead[1]] = 1;
+            applyZombieDamage(closestZombie);
+        } else if(player1.getDirection() == 'S'){
+            for(int i = 0; i < level + 2; i++){
+                int[] zombieLocation = zombieArray[i].getLocation();
+                if(zombieLocation[1] == bulletLocation[1]){
+                    if(closestZombie == null){
+                        closestZombie = zombieArray[i];
+                    } else if(zombieLocation[0] > closestZombie.getLocation()[0]) {
+                        closestZombie = zombieArray[i];
+                    }
                 }
             }
+            applyZombieDamage(closestZombie);
         }
     }
 
