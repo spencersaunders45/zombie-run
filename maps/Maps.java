@@ -167,8 +167,12 @@ public class Maps {
                 }
             }
             if (closestZombie != null){
-                closestZombie.shotZombie();
-                System.out.println("Hit!");
+                int[] isDead = closestZombie.shotZombie();
+                int[] notDead = {0,0};
+                if (isDead != notDead){
+                    System.out.println(isDead[0]);
+                    map[isDead[0]][isDead[1]] = 1;
+                }
             }
         }
     }

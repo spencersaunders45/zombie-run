@@ -8,12 +8,15 @@ public class Zombie {
    boolean killed = false;
 
    // Methods
-   public void shotZombie(){
+   public int[] shotZombie(){
       health -= 10;
       if (health <= 0){
          killed = true;
-         int[] killedLocation = {0,0};
-         setLocation(killedLocation);
+         int[] deathLocation = location;
+         setLocation(new int[]{0,0});
+         return deathLocation;
+      } else {
+         return new int[]{0,0};
       }
    }
 
