@@ -181,6 +181,7 @@ public class Maps {
                 }
             }
             applyZombieDamage(closestZombie);
+          // South facing
         } else if(player1.getDirection() == 'S'){
             for(int i = 0; i < level + 2; i++){
                 int[] zombieLocation = zombieArray[i].getLocation();
@@ -188,6 +189,30 @@ public class Maps {
                     if(closestZombie == null){
                         closestZombie = zombieArray[i];
                     } else if(zombieLocation[0] > closestZombie.getLocation()[0]) {
+                        closestZombie = zombieArray[i];
+                    }
+                }
+            }
+            applyZombieDamage(closestZombie);
+        } else if(player1.getDirection() == 'E'){
+            for(int i = 0; i < level + 2; i++){
+                int[] zombieLocation = zombieArray[i].getLocation();
+                if(zombieLocation[0] == bulletLocation[0]){
+                    if(closestZombie == null){
+                        closestZombie = zombieArray[i];
+                    } else if(zombieLocation[0] > closestZombie.getLocation()[0]) {
+                        closestZombie = zombieArray[i];
+                    }
+                }
+            }
+            applyZombieDamage(closestZombie);
+        } else if(player1.getDirection() == 'W'){
+            for(int i = 0; i < level + 2; i++){
+                int[] zombieLocation = zombieArray[i].getLocation();
+                if(zombieLocation[0] == bulletLocation[0]){
+                    if(closestZombie == null){
+                        closestZombie = zombieArray[i];
+                    } else if(zombieLocation[0] < closestZombie.getLocation()[0]) {
                         closestZombie = zombieArray[i];
                     }
                 }
