@@ -4,6 +4,7 @@ import Player.Player;
 import Zombie.Zombie;
 
 import java.util.HashMap;
+import java.util.Random;
 
 public class Maps {
     // Attributes
@@ -194,6 +195,7 @@ public class Maps {
                 }
             }
             applyZombieDamage(closestZombie);
+          // East facing
         } else if(player1.getDirection() == 'E'){
             for(int i = 0; i < level + 2; i++){
                 int[] zombieLocation = zombieArray[i].getLocation();
@@ -206,6 +208,7 @@ public class Maps {
                 }
             }
             applyZombieDamage(closestZombie);
+          // West facing
         } else if(player1.getDirection() == 'W'){
             for(int i = 0; i < level + 2; i++){
                 int[] zombieLocation = zombieArray[i].getLocation();
@@ -223,6 +226,65 @@ public class Maps {
 
     private void withShotgun(){
 
+    }
+
+    private void moveZombie(){
+        int[] playerPosition = player1.getPosition();
+        for (int i = 0; i < level + 2; i++){
+            int[] position = zombieArray[i].getLocation();
+            Random random = new Random();
+            int value = random.nextInt(2);
+            int[] newPosition;
+            // Movement when top right
+            if (position[0] > playerPosition[0] && position[1] > playerPosition[1]){
+                if (value == 0){
+                    newPosition = new int[]{position[0] - 1, position[1]};
+                } else {
+                    newPosition = new int[]{position[0], position[1] - 1};
+                }
+                zombieArray[i].setLocation(newPosition);
+            // Movement when top left
+            } else if (position[0] > playerPosition[0] && position[1] < playerPosition[1]){
+                if (value == 0){
+                    newPosition = new int[]{position[0] - 1, position[1]};
+                } else {
+                    newPosition = new int[]{position[0], position[1] + 1};
+                }
+                zombieArray[i].setLocation(newPosition);
+            // Movement when bottom left
+            } else if (position[0] < playerPosition[0] && position[1] < playerPosition[1]){
+                if (value == 0){
+                    newPosition = new int[]{position[0] + 1, position[1]};
+                } else {
+                    newPosition = new int[]{position[0], position[1] + 1};
+                }
+                zombieArray[i].setLocation(newPosition);
+            // Movement bottom right
+            } else if (position[0] < playerPosition[0] && position[1] > playerPosition[1]){
+                if (value == 0){
+                    newPosition = new int[]{position[0] + 1, position[1]};
+                } else {
+                    newPosition = new int[]{position[0], position[1] - 1};
+                }
+                zombieArray[i].setLocation(newPosition);
+            // Above player
+            } else if (position[0] > playerPosition[0]){
+                newPosition = new int[]{position[0] - 1, position[1]};
+                zombieArray[i].setLocation(newPosition);
+            // Below player
+            } else if (position[0] < playerPosition[0]){
+                newPosition = new int[]{position[0] + 1, position[1]};
+                zombieArray[i].setLocation(newPosition);
+            // Left of player
+            } else if (position[1] < playerPosition[1]){
+                newPosition = new int[]{position[0], position[1] + 1};
+                zombieArray[i].setLocation(newPosition);
+            // Right of player
+            } else if (position[1] > playerPosition[1]){
+                newPosition = new int[]{position[0], position[1] - 1};
+                zombieArray[i].setLocation(newPosition);
+            }
+        }
     }
 
     // Setters

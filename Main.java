@@ -37,6 +37,8 @@ public class Main {
 
          // Game loop
          while(gameActive == true){
+            int moveCount = 0;
+            int shootCount = 0;
             displayHud(game);
             game.displayMap();
             mainInput = action(input);
@@ -51,9 +53,14 @@ public class Main {
                      mainInput = action(input);
                   }
                   isValid = game.movePlayer(mainInput);
+                  moveCount++;
                }while (isValid == false);
             } else if (mainInput.equals("f")){ // Shoots zombies
-               game.shootZombie();
+               if(shootCount < 3){
+                  game.shootZombie();
+                  shootCount++;
+               }
+               System.out.println("No more shots this turn");
             } else {
                System.out.println("Error: Unknown input");
                return;
