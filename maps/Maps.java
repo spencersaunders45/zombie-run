@@ -228,6 +228,10 @@ public class Maps {
 
     }
 
+    private boolean zombieMoveValidation(int[] position){
+        return map[position[0]][position[1]] == 1;
+    }
+
     private void moveZombie(){
         int[] playerPosition = player1.getPosition();
         for (int i = 0; i < level + 2; i++){
@@ -242,7 +246,9 @@ public class Maps {
                 } else {
                     newPosition = new int[]{position[0], position[1] - 1};
                 }
-                zombieArray[i].setLocation(newPosition);
+                if (zombieMoveValidation(newPosition)){
+                    zombieArray[i].setLocation(newPosition);
+                }
             // Movement when top left
             } else if (position[0] > playerPosition[0] && position[1] < playerPosition[1]){
                 if (value == 0){
@@ -250,7 +256,9 @@ public class Maps {
                 } else {
                     newPosition = new int[]{position[0], position[1] + 1};
                 }
-                zombieArray[i].setLocation(newPosition);
+                if (zombieMoveValidation(newPosition)){
+                    zombieArray[i].setLocation(newPosition);
+                }
             // Movement when bottom left
             } else if (position[0] < playerPosition[0] && position[1] < playerPosition[1]){
                 if (value == 0){
@@ -258,7 +266,9 @@ public class Maps {
                 } else {
                     newPosition = new int[]{position[0], position[1] + 1};
                 }
-                zombieArray[i].setLocation(newPosition);
+                if (zombieMoveValidation(newPosition)){
+                    zombieArray[i].setLocation(newPosition);
+                }
             // Movement bottom right
             } else if (position[0] < playerPosition[0] && position[1] > playerPosition[1]){
                 if (value == 0){
@@ -266,138 +276,41 @@ public class Maps {
                 } else {
                     newPosition = new int[]{position[0], position[1] - 1};
                 }
-                zombieArray[i].setLocation(newPosition);
+                if (zombieMoveValidation(newPosition)){
+                    zombieArray[i].setLocation(newPosition);
+                }
             // Above player
             } else if (position[0] > playerPosition[0]){
                 newPosition = new int[]{position[0] - 1, position[1]};
-                zombieArray[i].setLocation(newPosition);
+                if (zombieMoveValidation(newPosition)){
+                    zombieArray[i].setLocation(newPosition);
+                }
             // Below player
             } else if (position[0] < playerPosition[0]){
                 newPosition = new int[]{position[0] + 1, position[1]};
-                zombieArray[i].setLocation(newPosition);
+                if (zombieMoveValidation(newPosition)){
+                    zombieArray[i].setLocation(newPosition);
+                }
             // Left of player
             } else if (position[1] < playerPosition[1]){
                 newPosition = new int[]{position[0], position[1] + 1};
-                zombieArray[i].setLocation(newPosition);
+                if (zombieMoveValidation(newPosition)){
+                    zombieArray[i].setLocation(newPosition);
+                }
             // Right of player
             } else if (position[1] > playerPosition[1]){
                 newPosition = new int[]{position[0], position[1] - 1};
-                zombieArray[i].setLocation(newPosition);
+                if (zombieMoveValidation(newPosition)){
+                    zombieArray[i].setLocation(newPosition);
+                }
             }
         }
     }
 
     // Setters
-    public void setMap(int[][] map) {
-        this.map = map;
-    }
-
-    public void setPlayer1(Player player1) {
-        this.player1 = player1;
-    }
-
-    public void setZombie1(Zombie zombie1){
-        this.zombie1 = zombie1;
-    }
-
-    public void setZombie2(Zombie zombie2) {
-        this.zombie2 = zombie2;
-    }
-
-    public void setZombie3(Zombie zombie3) {
-        this.zombie3 = zombie3;
-    }
-
-    public void setZombie4(Zombie zombie4) {
-        this.zombie4 = zombie4;
-    }
-
-    public void setZombie5(Zombie zombie5) {
-        this.zombie5 = zombie5;
-    }
-
-    public void setZombie6(Zombie zombie6) {
-        this.zombie6 = zombie6;
-    }
-
-    public void setZombie7(Zombie zombie7) {
-        this.zombie7 = zombie7;
-    }
-
-    public void setZombie8(Zombie zombie8) {
-        this.zombie8 = zombie8;
-    }
-
-    public void setZombie9(Zombie zombie9) {
-        this.zombie9 = zombie9;
-    }
-
-    public void setZombie10(Zombie zombie10) {
-        this.zombie10 = zombie10;
-    }
-
-    public void setZombie11(Zombie zombie11) {
-        this.zombie11 = zombie11;
-    }
-
-    public void setZombie12(Zombie zombie12) {
-        this.zombie12 = zombie12;
-    }
 
     // Getters
-    public int[][] getMap() {
-        return map;
-    }
-
-    public Player getPlayer1() {
+    public Player getPlayer1(){
         return player1;
-    }
-
-    public Zombie getZombie1() {
-        return zombie1;
-    }
-
-    public Zombie getZombie2() {
-        return zombie2;
-    }
-
-    public Zombie getZombie3() {
-        return zombie3;
-    }
-
-    public Zombie getZombie4() {
-        return zombie4;
-    }
-
-    public Zombie getZombie5() {
-        return zombie5;
-    }
-
-    public Zombie getZombie6() {
-        return zombie6;
-    }
-
-    public Zombie getZombie7() {
-        return zombie7;
-    }
-
-    public Zombie getZombie8() {
-        return zombie8;
-    }
-
-    public Zombie getZombie9() {
-        return zombie9;
-    }
-
-    public Zombie getZombie10() {
-        return zombie10;
-    }
-
-    public Zombie getZombie11() {
-        return zombie11;
-    }
-
-    public Zombie getZombie12() {
-        return zombie12;
     }
 }

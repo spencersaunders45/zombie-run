@@ -42,9 +42,12 @@ public class Main {
             displayHud(game);
             game.displayMap();
             mainInput = action(input);
+
             if(mainInput.equals("q")){ // Ends the game
                break;
-            } else if (mainInput.equals("w") || mainInput.equals("s") || // Moves the player
+
+            // Moves the player
+            } else if (mainInput.equals("w") || mainInput.equals("s") ||
                     mainInput.equals("a") || mainInput.equals("d")){
                boolean isValid = true;
                do{
