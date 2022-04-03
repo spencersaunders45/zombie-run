@@ -232,7 +232,7 @@ public class Maps {
         return map[position[0]][position[1]] == 1;
     }
 
-    private void moveZombie(){
+    public void moveZombie(){
         int[] playerPosition = player1.getPosition();
         for (int i = 0; i < level + 2; i++){
             int[] position = zombieArray[i].getLocation();

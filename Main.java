@@ -39,35 +39,47 @@ public class Main {
          while(gameActive == true){
             int moveCount = 0;
             int shootCount = 0;
-            displayHud(game);
-            game.displayMap();
-            mainInput = action(input);
+            while(moveCount < 3 && shootCount < 3){
+               displayHud(game);
+               game.displayMap();
+               mainInput = action(input);
 
-            if(mainInput.equals("q")){ // Ends the game
-               break;
+               if(mainInput.equals("q")){ // Ends the game
+                  gameActive = false;
+                  break;
 
-            // Moves the player
-            } else if (mainInput.equals("w") || mainInput.equals("s") ||
-                    mainInput.equals("a") || mainInput.equals("d")){
-               boolean isValid = true;
-               do{
-                  if (isValid == false){
-                     System.out.println("Cannot move there: try again");
-                     mainInput = action(input);
+                  // Moves the player
+               } else if (mainInput.equals("w") || mainInput.equals("s") ||
+                       mainInput.equals("a") || mainInput.equals("d")){
+                  if (moveCount < 3){
+                     boolean isValid = true;
+                     do{
+                        if (isValid == false){
+                           System.out.println("Cannot move there: try again");
+                           mainInput = action(input);
+                        }
+                        isValid = game.movePlayer(mainInput);
+                     }while (isValid == false);
+                     moveCount++;
+                     System.out.println(moveCount);
+                  } else {
+                     System.out.println("Out of movemnt.");
                   }
-                  isValid = game.movePlayer(mainInput);
-                  moveCount++;
-               }while (isValid == false);
-            } else if (mainInput.equals("f")){ // Shoots zombies
-               if(shootCount < 3){
-                  game.shootZombie();
-                  shootCount++;
+
+                  // Shoots zombies
+               } else if (mainInput.equals("f")){
+                  if(shootCount < 3){
+                     game.shootZombie();
+                     shootCount++;
+                  }
+                  System.out.println("No more shots this turn");
+               } else {
+                  System.out.println("Error: Unknown input");
+                  return;
                }
-               System.out.println("No more shots this turn");
-            } else {
-               System.out.println("Error: Unknown input");
-               return;
             }
+            // Zombies turn
+            game.moveZombie();
          }
       }
       System.out.println("Thanks for playing!");
