@@ -4,7 +4,8 @@
     <list default="true" id="ee29334d-0296-43d8-93de-da0b402da12c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Zombie/Zombie.class" beforeDir="false" afterPath="$PROJECT_DIR$/Zombie/Zombie.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Zombie/Zombie.java" beforeDir="false" afterPath="$PROJECT_DIR$/Zombie/Zombie.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/maps/Maps.class" beforeDir="false" afterPath="$PROJECT_DIR$/maps/Maps.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/maps/Maps.java" beforeDir="false" afterPath="$PROJECT_DIR$/maps/Maps.java" afterDir="false" />
     </list>
@@ -97,7 +98,8 @@
       <workItem from="1647393313521" duration="4373000" />
       <workItem from="1648229644238" duration="6722000" />
       <workItem from="1648743417902" duration="2205000" />
-      <workItem from="1648956625406" duration="2644000" />
+      <workItem from="1648956625406" duration="2926000" />
+      <workItem from="1649028621174" duration="646000" />
     </task>
     <servers />
   </component>

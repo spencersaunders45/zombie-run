@@ -247,6 +247,8 @@ public class Maps {
                     newPosition = new int[]{position[0], position[1] - 1};
                 }
                 if (zombieMoveValidation(newPosition)){
+                    map[position[0]][position[1]] = 1;
+                    map[newPosition[0]][newPosition[1]] = 10;
                     zombieArray[i].setLocation(newPosition);
                 }
             // Movement when top left
@@ -257,6 +259,8 @@ public class Maps {
                     newPosition = new int[]{position[0], position[1] + 1};
                 }
                 if (zombieMoveValidation(newPosition)){
+                    map[position[0]][position[1]] = 1;
+                    map[newPosition[0]][newPosition[1]] = 10;
                     zombieArray[i].setLocation(newPosition);
                 }
             // Movement when bottom left
@@ -267,6 +271,8 @@ public class Maps {
                     newPosition = new int[]{position[0], position[1] + 1};
                 }
                 if (zombieMoveValidation(newPosition)){
+                    map[position[0]][position[1]] = 1;
+                    map[newPosition[0]][newPosition[1]] = 10;
                     zombieArray[i].setLocation(newPosition);
                 }
             // Movement bottom right
@@ -277,30 +283,40 @@ public class Maps {
                     newPosition = new int[]{position[0], position[1] - 1};
                 }
                 if (zombieMoveValidation(newPosition)){
+                    map[position[0]][position[1]] = 1;
+                    map[newPosition[0]][newPosition[1]] = 10;
                     zombieArray[i].setLocation(newPosition);
                 }
             // Above player
             } else if (position[0] > playerPosition[0]){
                 newPosition = new int[]{position[0] - 1, position[1]};
                 if (zombieMoveValidation(newPosition)){
+                    map[position[0]][position[1]] = 1;
+                    map[newPosition[0]][newPosition[1]] = 10;
                     zombieArray[i].setLocation(newPosition);
                 }
             // Below player
             } else if (position[0] < playerPosition[0]){
                 newPosition = new int[]{position[0] + 1, position[1]};
                 if (zombieMoveValidation(newPosition)){
+                    map[position[0]][position[1]] = 1;
+                    map[newPosition[0]][newPosition[1]] = 10;
                     zombieArray[i].setLocation(newPosition);
                 }
             // Left of player
             } else if (position[1] < playerPosition[1]){
                 newPosition = new int[]{position[0], position[1] + 1};
                 if (zombieMoveValidation(newPosition)){
+                    map[position[0]][position[1]] = 1;
+                    map[newPosition[0]][newPosition[1]] = 10;
                     zombieArray[i].setLocation(newPosition);
                 }
             // Right of player
             } else if (position[1] > playerPosition[1]){
                 newPosition = new int[]{position[0], position[1] - 1};
                 if (zombieMoveValidation(newPosition)){
+                    map[position[0]][position[1]] = 1;
+                    map[newPosition[0]][newPosition[1]] = 10;
                     zombieArray[i].setLocation(newPosition);
                 }
             }

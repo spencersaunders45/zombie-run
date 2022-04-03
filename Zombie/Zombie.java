@@ -1,5 +1,7 @@
 package Zombie;
 
+import java.util.Arrays;
+
 public class Zombie {
    int health = 20;
    int speed = 1;
@@ -18,6 +20,10 @@ public class Zombie {
       } else {
          return new int[]{0,0};
       }
+   }
+
+   public void printLocation(){
+      System.out.println(Arrays.toString(location));
    }
 
    // Getters
