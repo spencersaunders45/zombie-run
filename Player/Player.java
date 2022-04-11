@@ -29,11 +29,8 @@ public class Player {
    }
 
    // Setters
-   public void setHealth(){
-      this.health += 50;
-      if(this.health > 100){
-         this.health = 100;
-      }
+   public void damagePlayer(int damage){
+      health -= damage;
    }
 
    public void setDirection(char direction){

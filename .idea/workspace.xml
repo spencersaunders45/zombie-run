@@ -4,8 +4,10 @@
     <list default="true" id="ee29334d-0296-43d8-93de-da0b402da12c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zombie/Zombie.class" beforeDir="false" afterPath="$PROJECT_DIR$/Zombie/Zombie.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zombie/Zombie.java" beforeDir="false" afterPath="$PROJECT_DIR$/Zombie/Zombie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Player/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/Player/Player.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Player/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/Player/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/maps/Maps.class" beforeDir="false" afterPath="$PROJECT_DIR$/maps/Maps.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/maps/Maps.java" beforeDir="false" afterPath="$PROJECT_DIR$/maps/Maps.java" afterDir="false" />
     </list>
@@ -99,7 +101,10 @@
       <workItem from="1648229644238" duration="6722000" />
       <workItem from="1648743417902" duration="2205000" />
       <workItem from="1648956625406" duration="2926000" />
-      <workItem from="1649028621174" duration="646000" />
+      <workItem from="1649028621174" duration="6347000" />
+      <workItem from="1649266000519" duration="385000" />
+      <workItem from="1649437558718" duration="2809000" />
+      <workItem from="1649687265997" duration="2171000" />
     </task>
     <servers />
   </component>

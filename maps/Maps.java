@@ -3,6 +3,7 @@ package maps;
 import Player.Player;
 import Zombie.Zombie;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Random;
 
@@ -319,6 +320,32 @@ public class Maps {
                     map[newPosition[0]][newPosition[1]] = 10;
                     zombieArray[i].setLocation(newPosition);
                 }
+            }
+        }
+    }
+
+    public void attackPlayer(){
+        int[] playerPosition = player1.getPosition();
+        for(int i = 0; i < level + 2; i++){
+            int[] zombiePosition = zombieArray[i].getLocation();
+            int yPosition = zombiePosition[0];
+            int xPosition = zombiePosition[1];
+            int[] checkNorth = {yPosition - 1, xPosition};
+            int[] checkSouth = {yPosition + 1, xPosition};
+            int[] checkWest = {yPosition, xPosition - 1};
+            int[] checkEast = {yPosition, xPosition + 1};
+            if (Arrays.equals(checkNorth, playerPosition)){
+                player1.damagePlayer(10);
+                return;
+            } else if (Arrays.equals(checkSouth, playerPosition)){
+                player1.damagePlayer(10);
+                return;
+            } else if (Arrays.equals(checkWest, playerPosition)){
+                player1.damagePlayer(10);
+                return;
+            } else if (Arrays.equals(checkEast, playerPosition)){
+                player1.damagePlayer(10);
+                return;
             }
         }
     }

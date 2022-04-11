@@ -39,18 +39,18 @@ public class Main {
          while(gameActive == true){
             int moveCount = 0;
             int shootCount = 0;
-            while(moveCount < 3 && shootCount < 3){
+            while(moveCount < 2 && shootCount < 3){
                displayHud(game);
                game.displayMap();
                mainInput = action(input);
 
-               if(mainInput.equals("q")){ // Ends the game
+               // Ends the game
+               if(mainInput.equals("q")){
                   gameActive = false;
                   break;
 
-                  // Moves the player
-               } else if (mainInput.equals("w") || mainInput.equals("s") ||
-                       mainInput.equals("a") || mainInput.equals("d")){
+               // Moves the player
+               } else if (mainInput.equals("w") || mainInput.equals("s") || mainInput.equals("a") || mainInput.equals("d")){
                   if (moveCount < 3){
                      boolean isValid = true;
                      do{
@@ -61,18 +61,19 @@ public class Main {
                         isValid = game.movePlayer(mainInput);
                      }while (isValid == false);
                      moveCount++;
-                     System.out.println(moveCount);
                   } else {
-                     System.out.println("Out of movemnt.");
+                     System.out.println("Out of movement.");
                   }
 
-                  // Shoots zombies
+               // Shoots zombies
                } else if (mainInput.equals("f")){
                   if(shootCount < 3){
                      game.shootZombie();
                      shootCount++;
                   }
                   System.out.println("No more shots this turn");
+
+               // Error
                } else {
                   System.out.println("Error: Unknown input");
                   return;
@@ -80,6 +81,7 @@ public class Main {
             }
             // Zombies turn
             game.moveZombie();
+            game.attackPlayer();
          }
       }
       System.out.println("Thanks for playing!");
