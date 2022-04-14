@@ -3,6 +3,7 @@ package maps;
 import Player.Player;
 import Zombie.Zombie;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Random;
@@ -166,6 +167,7 @@ public class Maps {
 
     public void shootZombie(){
         int[] bulletLocation = player1.getPosition();
+        ArrayList <Zombie> inRange = new ArrayList<Zombie>();
         Zombie closestZombie = null;
         // Kills Zombies north
         if(player1.getDirection() == 'N'){
@@ -174,10 +176,23 @@ public class Maps {
                 int[] zombieLocation = zombieArray[i].getLocation();
                 // Checks to see if the Zombie is in the same row as the player
                 if(zombieLocation[1] == bulletLocation[1]){
-                    if(closestZombie == null){
-                        closestZombie = zombieArray[i];
                     // Checks to see if the zombie in the same row is north of the player
-                    } else if(zombieLocation[0] < closestZombie.getLocation()[0]) {
+                    if(zombieLocation[0] < zombieArray[i].getLocation()[0]) {
+                        System.out.println("asdfasdfasdfsadf");
+                        inRange.add(zombieArray[i]);
+                    }
+                }
+            }
+            // Finds the closest Zombie
+            if (inRange.size() == 0){
+                return;
+            } else if (inRange.size() == 1){
+                closestZombie = zombieArray[0];
+            } else {
+                for(int i = 0; i < inRange.size(); i++){
+                    if (closestZombie == null){
+                        closestZombie = zombieArray[i];
+                    } else if (zombieArray[i].getLocation()[0] < closestZombie.getLocation()[0]){
                         closestZombie = zombieArray[i];
                     }
                 }

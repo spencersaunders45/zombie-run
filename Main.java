@@ -39,7 +39,7 @@ public class Main {
          while(gameActive == true){
             int moveCount = 0;
             int shootCount = 0;
-            while(moveCount < 2 && shootCount < 3){
+            while(moveCount < 3 && shootCount < 3){
                displayHud(game);
                game.displayMap();
                mainInput = action(input);
@@ -70,8 +70,9 @@ public class Main {
                   if(shootCount < 3){
                      game.shootZombie();
                      shootCount++;
+                  } else {
+                     System.out.println("No more shots this turn");
                   }
-                  System.out.println("No more shots this turn");
 
                // Error
                } else {
@@ -89,6 +90,8 @@ public class Main {
                gameActive = false;
                break;
             }
+            moveCount = 0;
+            shootCount = 0;
          }
       }
       System.out.println("Thanks for playing!");
@@ -99,13 +102,7 @@ public class Main {
       Player player = game.getPlayer1();
       System.out.print("\n\n\n\n");
       System.out.println("Health: " + player.getHealth());
-      if (player.getWeaponName().equals("Pistol")){
-         System.out.println("Gun: " + player.getWeaponName() +"     Ammo:" + player.getPistol().getAmmo());
-      } else if (player.getWeaponName().equals("Rifle")){
-         System.out.println("Gun: " + player.getWeaponName() +"     Ammo:" + player.getRifle().getAmmo());
-      } else if (player.getWeaponName().equals("Shotgun")){
-         System.out.println("Gun: " + player.getWeaponName() +"     Ammo:" + player.getShotgun().getAmmo());
-      }
+      System.out.println("Gun: " + player.getWeaponName());
       System.out.print("\n\n");
    }
 
