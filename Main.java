@@ -82,6 +82,13 @@ public class Main {
             // Zombies turn
             game.moveZombie();
             game.attackPlayer();
+            // Checks for player death
+            if (game.getPlayer1().getHealth() <= 0){
+               System.out.print("\n\n\n\n\n\n\n");
+               System.out.println("Game Over\n\n");
+               gameActive = false;
+               break;
+            }
          }
       }
       System.out.println("Thanks for playing!");

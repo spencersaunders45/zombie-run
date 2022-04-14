@@ -335,16 +335,16 @@ public class Maps {
             int[] checkWest = {yPosition, xPosition - 1};
             int[] checkEast = {yPosition, xPosition + 1};
             if (Arrays.equals(checkNorth, playerPosition)){
-                player1.damagePlayer(10);
+                player1.damagePlayer(20);
                 return;
             } else if (Arrays.equals(checkSouth, playerPosition)){
-                player1.damagePlayer(10);
+                player1.damagePlayer(20);
                 return;
             } else if (Arrays.equals(checkWest, playerPosition)){
-                player1.damagePlayer(10);
+                player1.damagePlayer(20);
                 return;
             } else if (Arrays.equals(checkEast, playerPosition)){
-                player1.damagePlayer(10);
+                player1.damagePlayer(20);
                 return;
             }
         }

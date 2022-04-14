@@ -10,6 +10,8 @@
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/maps/Maps.class" beforeDir="false" afterPath="$PROJECT_DIR$/maps/Maps.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/maps/Maps.java" beforeDir="false" afterPath="$PROJECT_DIR$/maps/Maps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/weapons/Rifle.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weapons/Shotgun.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,7 +106,8 @@
       <workItem from="1649028621174" duration="6347000" />
       <workItem from="1649266000519" duration="385000" />
       <workItem from="1649437558718" duration="2809000" />
-      <workItem from="1649687265997" duration="2171000" />
+      <workItem from="1649687265997" duration="6034000" />
+      <workItem from="1649903078558" duration="388000" />
     </task>
     <servers />
   </component>
