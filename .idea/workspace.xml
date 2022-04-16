@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="ee29334d-0296-43d8-93de-da0b402da12c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Player/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/Player/Player.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/maps/Maps.class" beforeDir="false" afterPath="$PROJECT_DIR$/maps/Maps.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/maps/Maps.java" beforeDir="false" afterPath="$PROJECT_DIR$/maps/Maps.java" afterDir="false" />
     </list>
@@ -104,6 +101,7 @@
       <workItem from="1649437558718" duration="2809000" />
       <workItem from="1649687265997" duration="6034000" />
       <workItem from="1649903078558" duration="3061000" />
+      <workItem from="1650071896202" duration="6608000" />
     </task>
     <servers />
   </component>
@@ -120,5 +118,16 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Main.java</url>
+          <line>188</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

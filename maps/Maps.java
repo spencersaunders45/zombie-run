@@ -165,6 +165,22 @@ public class Maps {
         }
     }
 
+    private Zombie findClosestZombie(ArrayList <Zombie> inRange){
+        Zombie closestZombie = null;
+        if (inRange.size() == 1){
+            closestZombie = inRange.get(0);
+        } else {
+            for(int i = 0; i < inRange.size(); i++){
+                if (closestZombie == null){
+                    closestZombie = inRange.get(i);
+                } else if (zombieArray[i].getLocation()[0] < closestZombie.getLocation()[0]){
+                    closestZombie = inRange.get(i);
+                }
+            }
+        }
+        return closestZombie;
+    }
+
     public void shootZombie(){
         int[] bulletLocation = player1.getPosition();
         ArrayList <Zombie> inRange = new ArrayList<Zombie>();
@@ -177,65 +193,48 @@ public class Maps {
                 // Checks to see if the Zombie is in the same row as the player
                 if(zombieLocation[1] == bulletLocation[1]){
                     // Checks to see if the zombie in the same row is north of the player
-                    if(zombieLocation[0] < zombieArray[i].getLocation()[0]) {
-                        System.out.println("asdfasdfasdfsadf");
+                    if (zombieLocation[0] < bulletLocation[0] && player1.getDirection() == 'N') {
+                        inRange.add(zombieArray[i]);
+                    } else if (zombieLocation[0] > bulletLocation[0] && player1.getDirection() == 'S') {
+                        System.out.println("here");
                         inRange.add(zombieArray[i]);
                     }
                 }
             }
-            // Finds the closest Zombie
-            if (inRange.size() == 0){
-                return;
-            } else if (inRange.size() == 1){
-                closestZombie = zombieArray[0];
-            } else {
-                for(int i = 0; i < inRange.size(); i++){
-                    if (closestZombie == null){
-                        closestZombie = zombieArray[i];
-                    } else if (zombieArray[i].getLocation()[0] < closestZombie.getLocation()[0]){
-                        closestZombie = zombieArray[i];
-                    }
-                }
-            }
-            applyZombieDamage(closestZombie);
           // South facing
-        } else if(player1.getDirection() == 'S'){
-            for(int i = 0; i < level + 2; i++){
-                int[] zombieLocation = zombieArray[i].getLocation();
-                if(zombieLocation[1] == bulletLocation[1]){
-                    if(closestZombie == null){
-                        closestZombie = zombieArray[i];
-                    } else if(zombieLocation[0] > closestZombie.getLocation()[0]) {
-                        closestZombie = zombieArray[i];
-                    }
-                }
-            }
-            applyZombieDamage(closestZombie);
+//        } else if(player1.getDirection() == 'S'){
+//            for(int i = 0; i < level + 2; i++){
+//                int[] zombieLocation = zombieArray[i].getLocation();
+//                if(zombieLocation[1] == bulletLocation[1]){
+//                    if(zombieLocation[0] > bulletLocation[0]) {
+//                        inRange.add(zombieArray[i]);
+//                    }
+//                }
+//            }
           // East facing
         } else if(player1.getDirection() == 'E'){
             for(int i = 0; i < level + 2; i++){
                 int[] zombieLocation = zombieArray[i].getLocation();
                 if(zombieLocation[0] == bulletLocation[0]){
-                    if(closestZombie == null){
-                        closestZombie = zombieArray[i];
-                    } else if(zombieLocation[0] > closestZombie.getLocation()[0]) {
-                        closestZombie = zombieArray[i];
+                    if(zombieLocation[1] > bulletLocation[1]) {
+                        inRange.add(zombieArray[i]);
                     }
                 }
             }
-            applyZombieDamage(closestZombie);
           // West facing
         } else if(player1.getDirection() == 'W'){
             for(int i = 0; i < level + 2; i++){
                 int[] zombieLocation = zombieArray[i].getLocation();
-                if(zombieLocation[0] == bulletLocation[0]){
-                    if(closestZombie == null){
-                        closestZombie = zombieArray[i];
-                    } else if(zombieLocation[0] < closestZombie.getLocation()[0]) {
-                        closestZombie = zombieArray[i];
+                if(zombieLocation[1] == bulletLocation[1]){
+                    if(zombieLocation[0] < bulletLocation[0]) {
+                        inRange.add(zombieArray[i]);
                     }
                 }
             }
+        }
+        // Finds the closest Zombie
+        if (inRange.size() > 0){
+            closestZombie = findClosestZombie(inRange);
             applyZombieDamage(closestZombie);
         }
     }
