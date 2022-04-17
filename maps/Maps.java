@@ -185,50 +185,24 @@ public class Maps {
         int[] bulletLocation = player1.getPosition();
         ArrayList <Zombie> inRange = new ArrayList<Zombie>();
         Zombie closestZombie = null;
-        // Kills Zombies north
-        if(player1.getDirection() == 'N'){
-            // Loops through all zombies in the current level
-            for(int i = 0; i < level + 2; i++){
-                int[] zombieLocation = zombieArray[i].getLocation();
-                // Checks to see if the Zombie is in the same row as the player
-                if(zombieLocation[1] == bulletLocation[1]){
-                    // Checks to see if the zombie in the same row is north of the player
-                    if (zombieLocation[0] < bulletLocation[0] && player1.getDirection() == 'N') {
-                        inRange.add(zombieArray[i]);
-                    } else if (zombieLocation[0] > bulletLocation[0] && player1.getDirection() == 'S') {
-                        System.out.println("here");
-                        inRange.add(zombieArray[i]);
-                    }
+        // Loops through all zombies in the current level
+        for(int i = 0; i < level + 2; i++){
+            int[] zombieLocation = zombieArray[i].getLocation();
+            // Checks to see if the Zombie is in the same column as the player
+            if(zombieLocation[1] == bulletLocation[1]){
+                // Checks to see if the zombie in the same row is north of the player
+                if (zombieLocation[0] < bulletLocation[0] && player1.getDirection() == 'N') {
+                    inRange.add(zombieArray[i]);
+                } else if (zombieLocation[0] > bulletLocation[0] && player1.getDirection() == 'S') {
+                    System.out.println("here");
+                    inRange.add(zombieArray[i]);
                 }
-            }
-          // South facing
-//        } else if(player1.getDirection() == 'S'){
-//            for(int i = 0; i < level + 2; i++){
-//                int[] zombieLocation = zombieArray[i].getLocation();
-//                if(zombieLocation[1] == bulletLocation[1]){
-//                    if(zombieLocation[0] > bulletLocation[0]) {
-//                        inRange.add(zombieArray[i]);
-//                    }
-//                }
-//            }
-          // East facing
-        } else if(player1.getDirection() == 'E'){
-            for(int i = 0; i < level + 2; i++){
-                int[] zombieLocation = zombieArray[i].getLocation();
-                if(zombieLocation[0] == bulletLocation[0]){
-                    if(zombieLocation[1] > bulletLocation[1]) {
-                        inRange.add(zombieArray[i]);
-                    }
-                }
-            }
-          // West facing
-        } else if(player1.getDirection() == 'W'){
-            for(int i = 0; i < level + 2; i++){
-                int[] zombieLocation = zombieArray[i].getLocation();
-                if(zombieLocation[1] == bulletLocation[1]){
-                    if(zombieLocation[0] < bulletLocation[0]) {
-                        inRange.add(zombieArray[i]);
-                    }
+            // Checks to see if Zombie is in the same row as the player
+            } else if(zombieLocation[0] == bulletLocation[0]){
+                if(zombieLocation[1] > bulletLocation[1] && player1.getDirection() == 'E') {
+                    inRange.add(zombieArray[i]);
+                } else if(zombieLocation[0] < bulletLocation[0] && player1.getDirection() == 'W') {
+                    inRange.add(zombieArray[i]);
                 }
             }
         }
