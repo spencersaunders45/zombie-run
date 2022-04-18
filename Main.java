@@ -37,6 +37,7 @@ public class Main {
 
          // Game loop
          while(gameActive == true){
+            boolean nextLevel = false;
             int moveCount = 0;
             int shootCount = 0;
             while(moveCount < 3 && shootCount < 3){
@@ -79,12 +80,17 @@ public class Main {
                   System.out.println("Error: Unknown input");
                   return;
                }
+               nextLevel = game.checkZombies();
+               if (nextLevel){
+                  break;
+               }
             }
             // Zombies turn
-            if (!game.checkZombies()){
-               game.moveZombie();
-               game.attackPlayer();
+            if (nextLevel){
+               continue;
             }
+            game.moveZombie();
+            game.attackPlayer();
             // Checks for player death
             if (game.getPlayer1().getHealth() <= 0){
                System.out.print("\n\n\n\n\n\n\n");

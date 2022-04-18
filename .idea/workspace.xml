@@ -5,10 +5,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Player/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/Player/Player.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Player/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/Player/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zombie/Zombie.class" beforeDir="false" afterPath="$PROJECT_DIR$/Zombie/Zombie.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zombie/Zombie.java" beforeDir="false" afterPath="$PROJECT_DIR$/Zombie/Zombie.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/maps/Maps.class" beforeDir="false" afterPath="$PROJECT_DIR$/maps/Maps.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/maps/Maps.java" beforeDir="false" afterPath="$PROJECT_DIR$/maps/Maps.java" afterDir="false" />
     </list>
@@ -109,7 +105,7 @@
       <workItem from="1649903078558" duration="3061000" />
       <workItem from="1650071896202" duration="6790000" />
       <workItem from="1650153157976" duration="832000" />
-      <workItem from="1650242424562" duration="6302000" />
+      <workItem from="1650242424562" duration="7506000" />
     </task>
     <servers />
   </component>

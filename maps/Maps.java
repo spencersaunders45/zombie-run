@@ -41,11 +41,14 @@ public class Maps {
 
     // Methods
     private void addLocations(){
-        int[] playerPosition = {playerStartLocation[0], playerStartLocation[1]}; //
+        int[] playerPosition = {playerStartLocation[0], playerStartLocation[1]};
         player1.setPosition(playerPosition);
-        for (int i = 0; i < level + 2; i++){
-            zombieArray[i].setLocation(zombieStartLocations[i]);
+        for (int i = 0; i < 12; i++){
+            int[] tempPosition = {zombieStartLocations[i][0], zombieStartLocations[i][1]};
+            zombieArray[i].setLocation(tempPosition);
+            System.out.println(Arrays.toString(tempPosition));
         }
+
     }
 
     public void healZombies(){
@@ -56,7 +59,6 @@ public class Maps {
 
     public void resetStartPoints(){
         // Reset player position
-        System.out.println(Arrays.toString(playerStartLocation));
         map[player1.getPosition()[0]][player1.getPosition()[1]] = 1;
         player1.setPosition(playerStartLocation);
         map[playerStartLocation[0]][playerStartLocation[1]] = 11;
@@ -351,7 +353,6 @@ public class Maps {
             level++;
             healZombies();
             resetStartPoints();
-            System.out.println("True");
             return true;
         }
         return false;
