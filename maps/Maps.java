@@ -41,7 +41,8 @@ public class Maps {
 
     // Methods
     private void addLocations(){
-        player1.setPosition(playerStartLocation);
+        int[] playerPosition = {playerStartLocation[0], playerStartLocation[1]}; //
+        player1.setPosition(playerPosition);
         for (int i = 0; i < level + 2; i++){
             zombieArray[i].setLocation(zombieStartLocations[i]);
         }
@@ -54,11 +55,16 @@ public class Maps {
     }
 
     public void resetStartPoints(){
+        // Reset player position
+        System.out.println(Arrays.toString(playerStartLocation));
+        map[player1.getPosition()[0]][player1.getPosition()[1]] = 1;
         player1.setPosition(playerStartLocation);
-        for (Zombie i : zombieArray){
-            for (int[] j : zombieStartLocations){
-                i.setLocation(j);
-            }
+        map[playerStartLocation[0]][playerStartLocation[1]] = 11;
+
+        for (int i = 0; i < level + 1; i++){
+            map[zombieArray[i].getLocation()[0]][zombieArray[i].getLocation()[1]] = 1;
+            zombieArray[i].setLocation(zombieStartLocations[i]);
+            map[zombieStartLocations[i][0]][zombieStartLocations[i][1]] = 10;
         }
     }
 
@@ -190,7 +196,7 @@ public class Maps {
             int[] zombieLocation = zombieArray[i].getLocation();
             // Checks to see if the Zombie is in the same column as the player
             if(zombieLocation[1] == bulletLocation[1]){
-                // Checks to see if the zombie in the same row is north of the player
+                // Checks to see if the zombie in the same column is ahead of bullet
                 if (zombieLocation[0] < bulletLocation[0] && player1.getDirection() == 'N') {
                     inRange.add(zombieArray[i]);
                 } else if (zombieLocation[0] > bulletLocation[0] && player1.getDirection() == 'S') {
@@ -211,10 +217,6 @@ public class Maps {
             closestZombie = findClosestZombie(inRange);
             applyZombieDamage(closestZombie);
         }
-    }
-
-    private void withShotgun(){
-
     }
 
     private boolean zombieMoveValidation(int[] position){
@@ -336,6 +338,23 @@ public class Maps {
                 return;
             }
         }
+    }
+
+    public boolean checkZombies(){
+        int deathCount = 0;
+        for (int i = 0; i < level + 2; i++){
+            if (zombieArray[i].getHealth() == 0){
+                deathCount++;
+            }
+        }
+        if (deathCount == level + 2){
+            level++;
+            healZombies();
+            resetStartPoints();
+            System.out.println("True");
+            return true;
+        }
+        return false;
     }
 
     // Setters

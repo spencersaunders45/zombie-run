@@ -49,7 +49,7 @@ public class Zombie {
 
    // Setters
    public void setHealth(){
-      this.health = 10;
+      this.health = 20;
    }
 
    public void setLocation(int[] location){

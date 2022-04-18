@@ -7,7 +7,6 @@ public class Player {
    char direction = 'N';
    int[] position;
    Pistols pistol = new Pistols();
-   Object weapon = pistol;
    String weaponName = "Pistol";
 
    //Methods
